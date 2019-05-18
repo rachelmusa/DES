@@ -45,12 +45,18 @@ body{
 }
 .des-profile-holder {
     background: #ffffff;
-    padding: 7px;
     border: none;
     position: fixed;
     z-index: 9;
     color:#3b01eb;
-    border-bottom: 1px solid #c0c8e6;
+}
+.des-logo{
+  /* background-color:#3b01eb; */
+  color: #3b01eb;
+}
+.des-logo h4 {
+    text-align: center;
+    padding: 7px;
 }
 .des-profile-bar {
     float: right;
@@ -63,4 +69,40 @@ body{
 .des-profile-bar ul li{
   display: inline-block;
   margin-left: 24px;
+}
+.des-nav-bar {
+    background: white;
+    position: fixed;
+    height: 100%;
+    border: none;
+    /* border-right: 1px solid #c0c8e6; */
+    -webkit-box-shadow: 10px -2px 22px -15px rgba(0,0,0,0.18);
+    -moz-box-shadow: 10px -2px 22px -15px rgba(0,0,0,0.18);
+    box-shadow: 10px -2px 22px -15px rgba(0,0,0,0.18);
+}
+.des-nav-bar ul{
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+.des-nav {
+    position: relative;
+    top: 96px;
+}
+.des-nav li a {
+    padding: 10px;
+    display: block;
+    text-decoration:none;
+}
+.des-nav li a:hover {
+    background:#3b01eb;
+    color:#ffffff;
+}
+.des-for-shadow {
+  padding:7px;
+    -webkit-box-shadow: 0px 18px 22px -15px rgba(0,0,0,0.18);
+    -moz-box-shadow: 0px 18px 22px -15px rgba(0,0,0,0.18);
+    box-shadow: 0px 18px 22px -15px rgba(0,0,0,0.18);
 }
