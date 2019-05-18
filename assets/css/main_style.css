@@ -43,3 +43,24 @@ body{
   box-shadow: 1px 2px 21px -13px rgba(0,0,0,0.63);
   background:#ffffff;
 }
+.des-profile-holder {
+    background: #ffffff;
+    padding: 7px;
+    border: none;
+    position: fixed;
+    z-index: 9;
+    color:#3b01eb;
+    border-bottom: 1px solid #c0c8e6;
+}
+.des-profile-bar {
+    float: right;
+    margin-right: 32px;
+}
+.des-profile-bar ul {
+    padding: 0;
+    list-style: none;
+}
+.des-profile-bar ul li{
+  display: inline-block;
+  margin-left: 24px;
+}
