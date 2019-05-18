@@ -62,6 +62,12 @@ body{
     float: right;
     margin-right: 32px;
 }
+.des-profile-bar label {
+    display: block;
+    font-size: 12px;
+    color: #a6aab5;
+    position: absolute;
+}
 .des-profile-bar ul {
     padding: 0;
     list-style: none;

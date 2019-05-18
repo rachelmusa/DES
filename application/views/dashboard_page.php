@@ -6,7 +6,10 @@
       <div class="col-md-10 des-for-shadow">
         <div class="des-profile-bar">
           <ul>
-            <li>Fatuma Mussa</li>
+            <li>
+              <span>Fatuma Mussa</span>
+              <label>Doctor</label>
+            </li>
             <li><a href="#"> <i class="fa fa-power-off"></i> </a></li>
           </ul>
         </div>
