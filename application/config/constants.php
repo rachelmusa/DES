@@ -2,8 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*PROJECT DEFINED CONSTANT*/
-define('PRO_FOLDER','tes');
-define('PRO_TITLE', 'Teacher Evaluation System');
+define('PRO_FOLDER','DES');
+define('PRO_TITLE', 'DES');
 /*
 |--------------------------------------------------------------------------
 | Display Debug backtrace
