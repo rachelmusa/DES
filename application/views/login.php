@@ -27,7 +27,7 @@
           </div>
           <div class="col-md-6 container">
             <button class="col-md-12 btn btn-primary des-btn" type="submit" name="button">LOGIN</button>
-            <p>New user, <a href="#">Create account</a> </p>
+            <!-- <p>Welcome to DES</p> -->
           </div>
         </form>
       </div>
