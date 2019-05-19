@@ -7,6 +7,16 @@ body{
     position: relative;
     top: 101px;
 }
+.des-form-holder h6{
+  color:#3b01eb;
+}
+.des-row-overide{
+  top: 52px;
+  padding: 58px;
+}
+.des-row-overide .row{
+  flex-wrap: nowrap;
+}
 .des-form-holder label {
     color: #3b01eb;
     font-size: 24px;
@@ -47,7 +57,7 @@ body{
     background: #ffffff;
     border: none;
     position: fixed;
-    z-index: 9;
+    z-index: 12;
     color:#3b01eb;
 }
 .des-logo{
@@ -79,6 +89,7 @@ body{
 .des-nav-bar {
     background: white;
     position: fixed;
+    z-index:9;
     height: 100%;
     border: none;
     /* border-right: 1px solid #c0c8e6; */
