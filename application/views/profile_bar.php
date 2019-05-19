@@ -7,7 +7,7 @@
           <span>Fatuma Mussa</span>
           <label>Doctor</label>
         </li>
-        <li><a href="#"> <i class="fa fa-power-off"></i> </a></li>
+        <li><a href="<?php echo base_url('index.php/dashboard/logout')?>"> <i class="fa fa-power-off"></i> </a></li>
       </ul>
     </div>
   </div>

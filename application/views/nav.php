@@ -9,6 +9,6 @@
     <!-- <li> <a href="<?php echo base_url('index.php/dashboard/doctor/add')?>">Enter Doctor</a> </li>
     <li> <a href="<?php echo base_url('index.php/dashboard/doctor/list')?>">Doctor List</a> </li> -->
     <li> <a href="<?php echo base_url('index.php/dashboard/user/add')?>">User Add</a> </li>
-    <li> <a href="<?php echo base_url('index.php/dashboard/user/list')?>">User List</a> </li>
+    <li> <a title="Logout" href="<?php echo base_url('index.php/dashboard/user/list')?>">User List</a> </li>
   </ul>
 </div>

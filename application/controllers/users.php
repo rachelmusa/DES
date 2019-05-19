@@ -27,5 +27,10 @@ class Users extends CI_controller
       redirect("dashboard/login");
     }
   }
+  function logout()
+  {
+    $this->session->sess_destroy();
+    redirect("dashboard/login");
+  }
 }
  ?>

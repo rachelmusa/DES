@@ -7,7 +7,14 @@ if ($this->session->userdata('checklogged') == true) {
     <div class="col-md-4 container">
       <div class="des-form-holder">
         <h5>LOGIN</h5>
-        <p>Error</p>
+        <p>
+          <?php
+               $error_message= $this->session->flashdata('error_message');
+               if($error_message){
+                 echo "<p class='des-error-bar'>".$error_message."</p>";
+               }
+             ?>
+        </p>
         <form class="" action="<?php echo base_url('index.php/user/do_login')?>" method="post">
           <div class="form-group">
             <div class="row">
