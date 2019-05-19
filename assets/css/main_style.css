@@ -72,11 +72,15 @@ body{
     float: right;
     margin-right: 32px;
 }
+.des-profile-bar span{
+  text-transform:capitalize;
+}
 .des-profile-bar label {
     display: block;
     font-size: 12px;
     color: #a6aab5;
     position: absolute;
+    text-transform:capitalize;
 }
 .des-profile-bar ul {
     padding: 0;

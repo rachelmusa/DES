@@ -4,10 +4,10 @@
     <div class="des-profile-bar">
       <ul>
         <li>
-          <span>Fatuma Mussa</span>
-          <label>Doctor</label>
+          <span><?php echo $this->session->userdata['user_profile']['fname']." ".$this->session->userdata['user_profile']['lname'];?></span>
+          <label><?php echo $this->session->userdata['user_profile']['jobname'];?></label>
         </li>
-        <li><a href="<?php echo base_url('index.php/dashboard/logout')?>"> <i class="fa fa-power-off"></i> </a></li>
+        <li><a title="logout" href="<?php echo base_url('index.php/dashboard/logout')?>"> <i class="fa fa-power-off"></i> </a></li>
       </ul>
     </div>
   </div>
