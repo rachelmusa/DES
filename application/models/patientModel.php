@@ -8,5 +8,12 @@ class patientModel extends CI_model
   {
     $this->db->insert('patients',$patientdata);
   }
+  function get_patients()
+  {
+    $this->db->select('*');
+    $this->db->from('patients');
+    $result = $this->db->get();
+    return $result->result();
+  }
 }
  ?>

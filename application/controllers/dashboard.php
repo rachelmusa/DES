@@ -9,6 +9,8 @@ class Dashboard extends CI_controller
   {
     // code...
     parent:: __construct();
+    $this->load->model('patientModel');
+    $this->load->model('drugModel');
     $this->load->helper('url');
   }
 
@@ -20,8 +22,9 @@ class Dashboard extends CI_controller
   }
   function drug_list()
   {
+    $data['druglist'] = $this->drugModel->get_drugs();
     $this->load->view('head');
-    $this->load->view('drug_list');
+    $this->load->view('drug_list',$data);
     $this->load->view('footer');
   }
   function hospital_add()
@@ -62,8 +65,9 @@ class Dashboard extends CI_controller
   }
   function patient_list()
   {
+    $data['patientlist'] = $this->patientModel->get_patients();
     $this->load->view('head');
-    $this->load->view('patient_list');
+    $this->load->view('patient_list',$data);
     $this->load->view('footer');
   }
   function home()

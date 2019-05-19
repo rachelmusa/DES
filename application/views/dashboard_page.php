@@ -19,7 +19,7 @@ if (!$this->session->userdata('checklogged') == true) {
           <div class="col-md-10">
             <div class="des-form-holder des-row-overide">
               <h6>Patient Information</h6>
-              <form class="" action="index.html" method="post">
+              <form class="" action="<?=base_url('index.php/dashboard/patient/save')?>" method="post">
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
@@ -28,7 +28,7 @@ if (!$this->session->userdata('checklogged') == true) {
                           <label for=""><i class="fa fa-user"></i></label>
                         </div>
                         <div class="col-md-11">
-                          <input placeholder="First Name" class="des-input" type="text" name="" value="">
+                          <input placeholder="First Name" class="des-input" type="text" name="patient[fname]" value="">
                         </div>
                       </div>
                     </div>
@@ -40,7 +40,7 @@ if (!$this->session->userdata('checklogged') == true) {
                           <label for=""><i class="fa fa-user"></i></label>
                         </div>
                         <div class="col-md-11">
-                          <input placeholder="Middle Name" class="des-input" type="text" name="" value="">
+                          <input placeholder="Middle Name" class="des-input" type="text" name="patient[mname]" value="">
                         </div>
                       </div>
                     </div>
@@ -52,7 +52,7 @@ if (!$this->session->userdata('checklogged') == true) {
                           <label for=""><i class="fa fa-user"></i></label>
                         </div>
                         <div class="col-md-11">
-                          <input placeholder="Last Name" class="des-input" type="text" name="" value="">
+                          <input placeholder="Last Name" class="des-input" type="text" name="patient[lname]" value="">
                         </div>
                       </div>
                     </div>
@@ -66,7 +66,7 @@ if (!$this->session->userdata('checklogged') == true) {
                           <label for=""><i class="fa fa-lock"></i></label>
                         </div>
                         <div class="col-md-11">
-                          <select class="des-input" name="">
+                          <select class="des-input" name="patient[gender]">
                             <option value="" selected disabled>Select Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -84,7 +84,7 @@ if (!$this->session->userdata('checklogged') == true) {
                           <label for=""><i class="fa fa-road"></i></label>
                         </div>
                         <div class="col-md-11">
-                          <input placeholder="Address" class="des-input" type="text" name="" value="">
+                          <input placeholder="Address" class="des-input" type="text" name="patient[address]" value="">
                         </div>
                       </div>
                     </div>
@@ -96,7 +96,7 @@ if (!$this->session->userdata('checklogged') == true) {
                           <label for=""><i class="fa fa-mobile"></i></label>
                         </div>
                         <div class="col-md-11">
-                          <input placeholder="Mobile" class="des-input" type="text" name="" value="">
+                          <input placeholder="Mobile" class="des-input" type="text" name="patient[mobile]" value="">
                         </div>
                       </div>
                     </div>
@@ -108,7 +108,7 @@ if (!$this->session->userdata('checklogged') == true) {
                           <label for=""><i class="fa fa-at"></i></label>
                         </div>
                         <div class="col-md-11">
-                          <input placeholder="Email" class="des-input" type="text" name="" value="">
+                          <input placeholder="Email" class="des-input" type="text" name="patient[email]" value="">
                         </div>
                       </div>
                     </div>
