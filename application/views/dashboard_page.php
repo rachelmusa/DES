@@ -1,4 +1,7 @@
-<?php defined('BASEPATH')OR exit('Exit'); ?>
+<?php defined('BASEPATH')OR exit('Exit');
+if (!$this->session->userdata('checklogged') == true) {
+  redirect('dashboard/login','referesh');
+}?>
 <section>
   <div class="container-fluid des-profile-holder">
     <!-- profile bar here -->
@@ -40,7 +43,7 @@
                           <input placeholder="Middle Name" class="des-input" type="text" name="" value="">
                         </div>
                       </div>
-                    </div>
+                    </div
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">

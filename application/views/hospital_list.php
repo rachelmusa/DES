@@ -1,4 +1,7 @@
-<?php defined('BASEPATH')OR exit('Exit'); ?>
+<?php defined('BASEPATH')OR exit('Exit');
+if (!$this->session->userdata('checklogged') == true) {
+  redirect('dashboard/login','referesh');
+}?>
 <section>
   <div class="container-fluid des-profile-holder">
     <!-- profile bar here -->
