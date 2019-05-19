@@ -11,7 +11,11 @@ class UserModel extends CI_model
     $this->db->from('users');
     $this->db->where($data);
     $result = $this->db->get();
-    return $result->result();
+    if ($result) {
+      return $result->row_array();
+    }else{
+      return false;
+    }
   }
 }
  ?>
