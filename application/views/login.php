@@ -4,14 +4,15 @@
     <div class="col-md-4 container">
       <div class="des-form-holder">
         <h5>LOGIN</h5>
-        <form class="" action="index.html" method="post">
+        <p>Error</p>
+        <form class="" action="<?php echo base_url('index.php/user/do_login')?>" method="post">
           <div class="form-group">
             <div class="row">
               <div class="col-md-1">
                 <label for=""><i class="fa fa-at"></i></label>
               </div>
               <div class="col-md-11">
-                <input placeholder="Email" class="des-input" type="text" name="" value="">
+                <input placeholder="Email" class="des-input" type="text" name="email" value="">
               </div>
             </div>
           </div>
@@ -21,7 +22,7 @@
                 <label for=""><i class="fa fa-lock"></i></label>
               </div>
               <div class="col-md-11">
-                <input placeholder="Password" class="des-input" type="password" name="" value="">
+                <input placeholder="Password" class="des-input" type="password" name="password" value="">
               </div>
             </div>
           </div>

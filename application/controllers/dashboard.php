@@ -72,5 +72,11 @@ class Dashboard extends CI_controller
     $this->load->view('dashboard_page');
     $this->load->view('footer');
   }
+  function index()
+  {
+    $this->load->view('head');
+    $this->load->view('login');
+    $this->load->view('footer');
+  }
 }
  ?>
