@@ -1,4 +1,7 @@
-<?php defined('BASEPATH')OR exit('Exit'); ?>
+<?php defined('BASEPATH')OR exit('Exit');
+if ($this->session->userdata('checklogged') == true) {
+  redirect('dashboard/home','referesh');
+}?>
 <section>
   <div class="">
     <div class="col-md-4 container">
