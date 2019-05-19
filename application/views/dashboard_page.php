@@ -10,9 +10,9 @@ if (!$this->session->userdata('checklogged') == true) {
   </div>
   <div class="container-fluid">
     <div class="row">
-      <!-- profile bar here -->
+      <!-- nviagtion here -->
       <?php $this->load->view('nav');?>
-      <!-- profile bar end here -->
+      <!-- navigation end here -->
       <div class="col-md-12 des-content-bar">
         <div class="row">
           <div class="col-md-2"></div>
@@ -43,7 +43,7 @@ if (!$this->session->userdata('checklogged') == true) {
                           <input placeholder="Middle Name" class="des-input" type="text" name="" value="">
                         </div>
                       </div>
-                    </div
+                    </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-group">
