@@ -31,7 +31,7 @@
           <div class="col-md-2"></div>
           <div class="col-md-10">
             <div class="des-form-holder des-row-overide">
-              <h6>Patient Information</h6>
+              <h6>User Information</h6>
               <form class="" action="index.html" method="post">
                 <div class="row">
                   <div class="col-md-4">
