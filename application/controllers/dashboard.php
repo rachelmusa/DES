@@ -11,6 +11,31 @@ class Dashboard extends CI_controller
     parent:: __construct();
     $this->load->helper('url');
   }
+
+  function drug_add()
+  {
+    $this->load->view('head');
+    $this->load->view('drug_add');
+    $this->load->view('footer');
+  }
+  function drug_list()
+  {
+    $this->load->view('head');
+    $this->load->view('drug_list');
+    $this->load->view('footer');
+  }
+  function hospital_add()
+  {
+    $this->load->view('head');
+    $this->load->view('hospital_add');
+    $this->load->view('footer');
+  }
+  function hospital_list()
+  {
+    $this->load->view('head');
+    $this->load->view('hospital_list');
+    $this->load->view('footer');
+  }
   function doctor_add()
   {
     $this->load->view('head');
