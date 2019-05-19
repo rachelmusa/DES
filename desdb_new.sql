@@ -50,9 +50,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `desdb`.`hosptials`
+-- Table `desdb`.`hospitals`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `desdb`.`hosptials` (
+CREATE TABLE IF NOT EXISTS `desdb`.`hospitals` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
   `tel` VARCHAR(45) NULL,
@@ -85,14 +85,14 @@ CREATE TABLE IF NOT EXISTS `desdb`.`users` (
   `email` VARCHAR(45) NULL,
   `issuedate` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   `password` VARCHAR(50) NULL,
-  `hosptialsid` INT NOT NULL,
+  `hospitalsid` INT NOT NULL,
   `jobtypeid` INT NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_doctors_hosptials_idx` (`hosptialsid` ASC) ,
+  INDEX `fk_doctors_hosptials_idx` (`hospitalsid` ASC) ,
   INDEX `fk_users_jobtype1_idx` (`jobtypeid` ASC) ,
   CONSTRAINT `fk_doctors_hosptials`
-    FOREIGN KEY (`hosptialsid`)
-    REFERENCES `desdb`.`hosptials` (`id`)
+    FOREIGN KEY (`hospitalsid`)
+    REFERENCES `desdb`.`hospitals` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_users_jobtype1`
@@ -134,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `desdb`.`patientfiles` (
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_patienttreatments_hosptials1`
     FOREIGN KEY (`hosptialsid`)
-    REFERENCES `desdb`.`hosptials` (`id`)
+    REFERENCES `desdb`.`hospitals` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
