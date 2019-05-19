@@ -30,7 +30,21 @@
           <div class="col-md-10">
             <div class="des-form-holder des-row-overide">
               <h6>Patient List</h6>
-
+              <div class="row">
+                <div class="col-md-12">
+                  <table class="table">
+                    <tr class="des-table-row-th">
+                      <th>SN</th>
+                      <th>First Name</th>
+                      <th>Middel Name</th>
+                      <th>Last Name</th>
+                      <th>Gender</th>
+                      <th>Address</th>
+                      <th>Mobile</th>
+                    </tr>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
         </div>
