@@ -30,6 +30,18 @@ if (!$this->session->userdata('checklogged') == true) {
                       <th>Gender</th>
                       <th>Address</th>
                       <th>Mobile</th>
+                      <th>Role</th>
+                    <?php foreach ($userlist as $key => $value){?>
+                      <tr>
+                        <td><?=$key+1?></td>
+                        <td><?=$value->fname?></td>
+                        <td><?=$value->mname?></td>
+                        <td><?=$value->lname?></td>
+                        <td><?=$value->gender?></td>
+                        <td><?=$value->mobile?></td>
+                        <td><?=$value->jobname?></td>
+                      </tr>
+                    <?php }; ?>
                     </tr>
                   </table>
                 </div>

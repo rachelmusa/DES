@@ -52,6 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['user/do_login'] = 'users/processLogin';
 $route['dashboard/user/add'] = 'dashboard/user_add';
 $route['dashboard/user/list'] = 'dashboard/user_list';
+$route['dashboard/user/save'] = 'users/set_user';
 $route['dashboard/hospital/add'] = 'dashboard/hospital_add';
 $route['dashboard/hospital/list'] = 'dashboard/hospital_list';
 $route['dashboard/hospital/save'] = 'hospitals/save_hospitals';

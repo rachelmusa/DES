@@ -12,6 +12,13 @@ class Users extends CI_controller
     $this->load->model('UserModel');
   }
 
+  function set_user()
+  {
+    $userdata = $this->input->post('user');
+    $this->UserModel->saveUser($userdata);
+    redirect('dashboard/user/list');
+  }
+
   function processLogin()
   {
     $email = $this->input->post('email');

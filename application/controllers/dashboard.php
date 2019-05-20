@@ -9,8 +9,10 @@ class Dashboard extends CI_controller
   {
     // code...
     parent:: __construct();
+    $this->load->model('UserModel');
     $this->load->model('patientModel');
     $this->load->model('hospitalModel');
+    $this->load->model('jobtypeModel');
     $this->load->model('drugModel');
     $this->load->helper('url');
   }
@@ -55,14 +57,17 @@ class Dashboard extends CI_controller
   }
   function user_add()
   {
+    $data['hospitallist'] = $this->hospitalModel->get_hospitals();
+    $data['joblist'] = $this->jobtypeModel->get_jobtypes();
     $this->load->view('head');
-    $this->load->view('user_add');
+    $this->load->view('user_add',$data);
     $this->load->view('footer');
   }
   function user_list()
   {
+    $data['hospitalist'] = $this->UserModel->userlist();
     $this->load->view('head');
-    $this->load->view('user_list');
+    $this->load->view('user_list',$data);
     $this->load->view('footer');
   }
   function patient_list()
