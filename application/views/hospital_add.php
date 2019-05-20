@@ -39,7 +39,7 @@ if (!$this->session->userdata('checklogged') == true) {
                     <div class="form-group">
                       <div class="row">
                         <div class="col-md-1">
-                          <label for=""><i class="fa fa-road"></i></label>
+                          <label for=""><i class="fa fa-phone"></i></label>
                         </div>
                         <div class="col-md-11">
                           <input placeholder="Telephone number" class="des-input" type="text" name="hospital[tel]" value="">
@@ -53,7 +53,7 @@ if (!$this->session->userdata('checklogged') == true) {
                     <div class="form-group">
                       <div class="row">
                         <div class="col-md-1">
-                          <label for=""><i class="fa fa-road"></i></label>
+                          <label for=""><i class="fa fa-mobile"></i></label>
                         </div>
                         <div class="col-md-11">
                           <input placeholder="Mobile number" class="des-input" type="text" name="hospital[mobile]" value="">
@@ -67,7 +67,7 @@ if (!$this->session->userdata('checklogged') == true) {
                     <div class="form-group">
                       <div class="row">
                         <div class="col-md-1">
-                          <label for=""><i class="fa fa-road"></i></label>
+                          <label for=""><i class="fa fa-at"></i></label>
                         </div>
                         <div class="col-md-11">
                           <input placeholder="Email" class="des-input" type="text" name="hospital[email]" value="">
