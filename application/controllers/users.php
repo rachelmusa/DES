@@ -15,6 +15,7 @@ class Users extends CI_controller
   function set_user()
   {
     $userdata = $this->input->post('user');
+    $userdata['password'] = md5($userdata['lname']);
     $this->UserModel->saveUser($userdata);
     redirect('dashboard/user/list');
   }

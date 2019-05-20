@@ -63,7 +63,7 @@ if (!$this->session->userdata('checklogged') == true) {
                     <div class="form-group">
                       <div class="row">
                         <div class="col-md-1">
-                          <label for=""><i class="fa fa-lock"></i></label>
+                          <label for=""><i class="fa fa-venus-mars"></i></label>
                         </div>
                         <div class="col-md-11">
                           <select class="des-input" name="user[gender]">
@@ -119,7 +119,7 @@ if (!$this->session->userdata('checklogged') == true) {
                     <div class="form-group">
                       <div class="row">
                         <div class="col-md-1">
-                          <label for=""><i class="fa fa-lock"></i></label>
+                          <label for=""><i class="fa fa-home"></i></label>
                         </div>
                         <div class="col-md-11">
                           <select class="des-input" name="user[hospitalsid]">
@@ -136,7 +136,7 @@ if (!$this->session->userdata('checklogged') == true) {
                     <div class="form-group">
                       <div class="row">
                         <div class="col-md-1">
-                          <label for=""><i class="fa fa-lock"></i></label>
+                          <label for=""><i class="fa fa-user-md"></i></label>
                         </div>
                         <div class="col-md-11">
                           <select class="des-input" name="user[jobtypeid]">

@@ -9,7 +9,7 @@ class hospitals extends CI_controller
   {
     // code...
     parent::__construct();
-    $this->db->load->model('hospitalModel');
+    $this->load->model('hospitalModel');
     $this->load->helper('url');
   }
   function save_hospitals()

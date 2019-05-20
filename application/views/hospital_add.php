@@ -25,7 +25,7 @@ if (!$this->session->userdata('checklogged') == true) {
                     <div class="form-group">
                       <div class="row">
                         <div class="col-md-1">
-                          <label for=""><i class="fa fa-user"></i></label>
+                          <label for=""><i class="fa fa-home"></i></label>
                         </div>
                         <div class="col-md-11">
                           <input placeholder="Hospital Name" class="des-input" type="text" name="hospital[name]" value="">

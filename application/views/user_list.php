@@ -25,7 +25,7 @@ if (!$this->session->userdata('checklogged') == true) {
                     <tr class="des-table-row-th">
                       <th>SN</th>
                       <th>First Name</th>
-                      <!-- <th>Middel Name</th> -->
+                      <th>Middel Name</th>
                       <th>Last Name</th>
                       <th>Gender</th>
                       <th>Address</th>
@@ -35,7 +35,7 @@ if (!$this->session->userdata('checklogged') == true) {
                       <tr>
                         <td><?=$key+1?></td>
                         <td><?=$value->fname?></td>
-                        <!-- <td><?=$value->mname?></td> -->
+                        <td><?if($value->mname)echo $value->mname; else echo 'Null';?></td>
                         <td><?=$value->lname?></td>
                         <td><?=$value->gender?></td>
                         <td><?=$value->address?></td>
