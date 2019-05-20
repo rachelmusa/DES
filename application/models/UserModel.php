@@ -6,11 +6,12 @@ class UserModel extends CI_model
 {
   function userlist()
   {
-    $this->db->select('u.id as userid,u.fname,u.lname,u.mobile,u.email,j.name as jobname,h.name as hospitalname');
+    $this->db->select('u.id as userid,u.fname,u.lname,u.gender,u.address,
+    u.mobile,u.email,j.name as jobname,h.name as hospitalname');
     $this->db->from('users as u');
     $this->db->join('jobtype as j','j.id = u.jobtypeid','inner');
     $this->db->join('hospitals as h','h.id = u.hospitalsid','inner');
-    $this->db->where($data);
+    //$this->db->where($data);
     $users = $this->db->get();
     return $users->result();
   }

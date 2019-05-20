@@ -65,7 +65,7 @@ class Dashboard extends CI_controller
   }
   function user_list()
   {
-    $data['hospitalist'] = $this->UserModel->userlist();
+    $data['userlist'] = $this->UserModel->userlist();
     $this->load->view('head');
     $this->load->view('user_list',$data);
     $this->load->view('footer');
