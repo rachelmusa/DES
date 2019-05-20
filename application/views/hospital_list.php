@@ -30,6 +30,16 @@ if (!$this->session->userdata('checklogged') == true) {
                       <th>Email</th>
                       <th>Address</th>
                     </tr>
+                    <?php foreach ($hospitalist as $key => $value){?>
+                      <tr>
+                        <td><?=$key+1?></td>
+                        <td><?=$value->name?></td>
+                        <td><?=$value->tel?></td>
+                        <td><?=$value->mobile?></td>
+                        <td><?=$value->email?></td>
+                        <td><?=$value->issuedate?></td>
+                      </tr>
+                    <?php }; ?>
                   </table>
                 </div>
               </div>

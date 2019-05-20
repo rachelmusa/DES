@@ -10,6 +10,7 @@ class Dashboard extends CI_controller
     // code...
     parent:: __construct();
     $this->load->model('patientModel');
+    $this->load->model('hospitalModel');
     $this->load->model('drugModel');
     $this->load->helper('url');
   }
@@ -35,8 +36,9 @@ class Dashboard extends CI_controller
   }
   function hospital_list()
   {
+    $data['hospitalist'] = $this->hospitalModel->get_hospitals();
     $this->load->view('head');
-    $this->load->view('hospital_list');
+    $this->load->view('hospital_list',$data);
     $this->load->view('footer');
   }
   function doctor_add()
