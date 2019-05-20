@@ -19,40 +19,16 @@ if (!$this->session->userdata('checklogged') == true) {
           <div class="col-md-10">
             <div class="des-form-holder des-row-overide">
               <h6>Hospital Information</h6>
-              <form class="" action="index.html" method="post">
+              <form class="" action="<?=base_url('index.php/dashboard/hospital/save')?>" method="post">
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-12">
                     <div class="form-group">
                       <div class="row">
                         <div class="col-md-1">
                           <label for=""><i class="fa fa-user"></i></label>
                         </div>
                         <div class="col-md-11">
-                          <input placeholder="First Name" class="des-input" type="text" name="" value="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <div class="row">
-                        <div class="col-md-1">
-                          <label for=""><i class="fa fa-user"></i></label>
-                        </div>
-                        <div class="col-md-11">
-                          <input placeholder="Middle Name" class="des-input" type="text" name="" value="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <div class="row">
-                        <div class="col-md-1">
-                          <label for=""><i class="fa fa-user"></i></label>
-                        </div>
-                        <div class="col-md-11">
-                          <input placeholder="Last Name" class="des-input" type="text" name="" value="">
+                          <input placeholder="Hospital Name" class="des-input" type="text" name="hospital[name]" value="">
                         </div>
                       </div>
                     </div>
@@ -63,52 +39,38 @@ if (!$this->session->userdata('checklogged') == true) {
                     <div class="form-group">
                       <div class="row">
                         <div class="col-md-1">
-                          <label for=""><i class="fa fa-lock"></i></label>
+                          <label for=""><i class="fa fa-road"></i></label>
                         </div>
                         <div class="col-md-11">
-                          <select class="des-input" name="">
-                            <option value="" selected disabled>Select Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                          </select>
+                          <input placeholder="Telephone number" class="des-input" type="text" name="hospital[tel]" value="">
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-12">
                     <div class="form-group">
                       <div class="row">
                         <div class="col-md-1">
                           <label for=""><i class="fa fa-road"></i></label>
                         </div>
                         <div class="col-md-11">
-                          <input placeholder="Address" class="des-input" type="text" name="" value="">
+                          <input placeholder="Mobile number" class="des-input" type="text" name="hospital[mobile]" value="">
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
                     <div class="form-group">
                       <div class="row">
                         <div class="col-md-1">
-                          <label for=""><i class="fa fa-mobile"></i></label>
+                          <label for=""><i class="fa fa-road"></i></label>
                         </div>
                         <div class="col-md-11">
-                          <input placeholder="Mobile" class="des-input" type="text" name="" value="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <div class="row">
-                        <div class="col-md-1">
-                          <label for=""><i class="fa fa-at"></i></label>
-                        </div>
-                        <div class="col-md-11">
-                          <input placeholder="Email" class="des-input" type="text" name="" value="">
+                          <input placeholder="Email" class="des-input" type="text" name="hospital[email]" value="">
                         </div>
                       </div>
                     </div>

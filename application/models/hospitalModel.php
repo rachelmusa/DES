@@ -4,6 +4,10 @@
  */
 class hospitalModel extends CI_model
 {
+  function set_hospital($data)
+  {
+    $this->db->insert('hospitals',$data);
+  }
   function get_hospitals()
   {
     $this->db->select('*');

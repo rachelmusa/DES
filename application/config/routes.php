@@ -54,6 +54,7 @@ $route['dashboard/user/add'] = 'dashboard/user_add';
 $route['dashboard/user/list'] = 'dashboard/user_list';
 $route['dashboard/hospital/add'] = 'dashboard/hospital_add';
 $route['dashboard/hospital/list'] = 'dashboard/hospital_list';
+$route['dashboard/hospital/save'] = 'hospitals/save_hospitals';
 $route['dashboard/drug/add'] = 'dashboard/drug_add';
 $route['dashboard/drug/list'] = 'dashboard/drug_list';
 $route['dashboard/drug/save'] = 'drugs/set_drug';
