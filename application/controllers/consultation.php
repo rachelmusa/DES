@@ -30,7 +30,20 @@ class consultation extends CI_controller{
       }
   }
   function patient_symptoms($patientFileId){
-      echo $patientFileId;
+      $data['patientfile'] = $patientFileId;
+      $this->load->view('head');
+      $this->load->view('patientsymptomps',$data);
+      $this->load->view('footer');
+  }
+  function patient_symptoms_save(){
+      $data = $this->input->post('psymptomps');
+      $check = $this->patientModel->saveSymptomps($data);
+      if($check){
+        $this->session->set_flashdata('message', 'Error occur');
+        redirct('consultation/patient/symptoms/'.$data['patientfileno']);
+      }else{
+          redirect('consultation/patient/assign_drugs');
+      }
   }
 }
 ?>

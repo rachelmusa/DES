@@ -27,5 +27,8 @@ class patientModel extends CI_model
     $lastId = $this->db->insert_id();
     return $lastId;
   }
+  function saveSymptomps($data){
+    $this->db->insert('patientsymptoms',$data);
+  }
 }
  ?>

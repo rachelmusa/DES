@@ -51,6 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['user/do_login'] = 'users/processLogin';
 $route['consultation/patient/symptoms/(:num)'] = 'consultation/patient_symptoms/$1';
+$route['consultation/patient/symptoms/save'] = 'consultation/patient_symptoms_save';
 $route['consultation/patient/details/save'] = 'consultation/patient_details_save';
 $route['consultation/patient/details'] = 'consultation/patient_details';
 $route['dashboard/user/add'] = 'dashboard/user_add';
