@@ -19,6 +19,9 @@ if (!$this->session->userdata('checklogged') == true) {
           <div class="col-md-10">
             <div class="des-form-holder des-row-overide">
               <h6>User Information</h6>
+              <p class="side-link">
+               <i class="fa fa-user"></i><a class="btn" href="<?php echo base_url('index.php/dashboard/user/list')?>">User List</a>
+              </p>
               <form class="" action="<?=base_url('index.php/dashboard/user/save')?>" method="post">
                 <div class="row">
                   <div class="col-md-4">

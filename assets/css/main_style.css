@@ -10,6 +10,12 @@ body{
 .des-form-holder h6{
   color:#3b01eb;
 }
+.side-link{
+  color: #3b01eb;
+    position: absolute;
+    right: 76px;
+    top: 45px;
+}
 .des-row-overide{
   top: 52px;
   padding: 58px;
