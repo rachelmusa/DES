@@ -18,5 +18,14 @@ class patientModel extends CI_model
   function consult_patientdetailsSave($data){
     $this->db->insert('patientdetails',$data);
   }
+  function opwnfileForPatient($patientId,$hospitalId,$userId){
+    $data = array(
+      'patientsid' =>$patientId,
+    'hosptialsid' =>$hospitalId,
+    'issuedby'=>$userId);
+    $this->db->insert('patientfiles',$data);
+    $lastId = $this->db->insert_id();
+    return $lastId;
+  }
 }
  ?>

@@ -18,18 +18,19 @@ class consultation extends CI_controller{
       $this->load->view('footer');
   }
   function patient_details_save(){
+      $userCurrent = $this->session->userdata('user_profile');
       $patientdetails = $this->input->post('pdetails');
       $check = $this->patientModel->consult_patientdetailsSave($patientdetails);
-      //$check = $this->patientModel->opwnfileForPatient($patientdetails['patientsid'],$currentUser['hosptilaId']);
+      $openFile = $this->patientModel->opwnfileForPatient($patientdetails['patientsid'],$userCurrent['hospitalid'],$userCurrent['userid']);
       if($check){
         $this->session->set_flashdata('message', 'Error occur');
         redirct('consultation/patient/details');
       }else{
-          redirect('consultation/patient/symptoms/');
+          redirect('consultation/patient/symptoms/'.$openFile);
       }
   }
   function patient_symptoms($patientFileId){
-
+      echo $patientFileId;
   }
 }
 ?>
