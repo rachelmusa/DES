@@ -15,5 +15,8 @@ class patientModel extends CI_model
     $result = $this->db->get();
     return $result->result();
   }
+  function consult_patientdetailsSave($data){
+    $this->db->insert('patientdetails',$data);
+  }
 }
  ?>
