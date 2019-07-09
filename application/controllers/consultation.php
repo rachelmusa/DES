@@ -26,24 +26,50 @@ class consultation extends CI_controller{
         $this->session->set_flashdata('message', 'Error occur');
         redirct('consultation/patient/details');
       }else{
-          redirect('consultation/patient/symptoms/'.$openFile);
+          redirect('consultation/patient/symptoms/'.$openFile.'/'.$patientdetails['patientsid']);
       }
   }
-  function patient_symptoms($patientFileId){
+  function patient_symptoms($patientFileId,$patientId){
       $data['patientfile'] = $patientFileId;
+      $data['patientid'] = $patientId;
       $this->load->view('head');
       $this->load->view('patientsymptomps',$data);
       $this->load->view('footer');
   }
   function patient_symptoms_save(){
+    $userCurrent = $this->session->userdata('user_profile');
       $data = $this->input->post('psymptomps');
-      $check = $this->patientModel->saveSymptomps($data);
-      if($check){
+      $data['usersid'] = $userCurrent['userid'];
+      $patientId = $this->input->post('patientId');
+      $lastSymtomps = $this->patientModel->saveSymptomps($data);
+      if($lastSymtomps){
+        redirect('consultation/patient/assign_drugs/'.$lastSymtomps.'/'.$patientId);
+      }else{
         $this->session->set_flashdata('message', 'Error occur');
         redirct('consultation/patient/symptoms/'.$data['patientfileno']);
-      }else{
-          redirect('consultation/patient/assign_drugs');
       }
+  }
+  function assign_drugs($symtompsId,$patientId){
+    $data['symtompsId'] = $symtompsId;
+    $data['patientId'] = $patientId;
+    $data['patientList'] = $this->patientModel->get_patients();
+    $data['drugList'] = $this->drugModel->get_drugs();
+    $this->load->view('head');
+    $this->load->view('assign_drug',$data);
+    $this->load->view('footer');
+  }
+  function assign_drug_save(){
+    $patientInfo = $this->input->post('pdetails');
+    $patientInfo['patientId'] = $this->input->post('patientId');
+    $check = $this->drugModel->checkDrugs($patientInfo['drugsid'],$patientInfo['patientId']);
+    if($check){
+      $this->session->set_flashdata('message', 'Change patient drug..');
+      redirect('/consultation/patient/assign_drugs/'.$patientInfo['patientsymptomsid'].'/'.$patientInfo['patientId']);
+    }else{
+      $this->drugModel->insertPatientDrug($patientInfo);
+      $this->session->set_flashdata('message', 'Assigned successfully');
+      redirect('/consultation/patient/assign_drugs/'.$patientInfo['patientsymptomsid'].'/'.$patientInfo['patientId']);
+    }
   }
 }
 ?>

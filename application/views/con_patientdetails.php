@@ -25,9 +25,9 @@ if (!$this->session->userdata('checklogged') == true) {
                 echo '<p class="alert alert-success">'.$message.'</p>';
               }
               ?>
-              <!--<p class="side-link">
-               <i class="fa fa-medkit"></i><a class="btn" href="<?php echo base_url('index.php/dashboard/drug/list')?>">Drug list</a>
-              </p>-->
+              <!-- <p class="side-link">
+               <i class="fa fa-search"></i><a class="btn" href="<?php echo base_url('index.php/dashboard/drug/list')?>">Check patinet status</a>
+              </p> -->
               <form class="" action="<?=base_url('index.php/consultation/patient/details/save')?>" method="post">
 
                 <div class="row">

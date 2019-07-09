@@ -18,7 +18,7 @@ if (!$this->session->userdata('checklogged') == true) {
           <div class="col-md-2"></div>
           <div class="col-md-10">
             <div class="des-form-holder des-row-overide">
-              <h6>Consultation, Adding symptomps.</h6>
+              <h6>Assign drug, to Patient.</h6>
               <?php 
               $message = $this->session->flashdata('message');
               if($message){
@@ -28,33 +28,24 @@ if (!$this->session->userdata('checklogged') == true) {
               <!--<p class="side-link">
                <i class="fa fa-medkit"></i><a class="btn" href="<?php echo base_url('index.php/dashboard/drug/list')?>">Drug list</a>
               </p>-->
-              <form class="" action="<?=base_url('index.php/consultation/patient/symptoms/save')?>" method="post">
+              <form class="" action="<?=base_url('index.php/consultation/patient/drugs/save')?>" method="post">
 
                 <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                      <div class="row">
-                        <div class="col-md-1">
-                          <label for=""><i class="fa fa-info"></i></label>
-                        </div>
-                        <div class="col-md-11">
-                            <input type="hidden" value="<?=$patientfile?>" name="psymptomps[patientfileno]">
-                            <input type="text" value="<?=$patientid?>" name="patientId">
-                          <input placeholder="symptomps name" class="des-input" type="text" name="psymptomps[name]" value="">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
+                <input name="pdetails[patientsymptomsid]" type="hidden" value="<?=$symtompsId?>">
+                <input name="patientId" type="hidden" value="<?=$patientId?>">
                   <div class="col-md-12">
                     <div class="form-group">
                       <div class="row">
                         <div class="col-md-1">
-                          <label for=""><i class="fa fa-info"></i></label>
+                          <label for=""><i class="fa fa-medkit"></i></label>
                         </div>
                         <div class="col-md-11">
-                            <textarea id="" style="height:150px" cols="100" rows="80" class="des-input" name="psymptomps[description]"></textarea>
+                          <select class="des-input" name="pdetails[drugsid]">
+                            <option value="" selected disabled>Select Drug</option>
+                            <?php foreach ($drugList as $key => $value) {?>
+                                <option value="<?=$value->id?>"><?=$value->name?></option>
+                            <?php }?>
+                          </select>
                         </div>
                       </div>
                     </div>

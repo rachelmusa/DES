@@ -29,6 +29,8 @@ class patientModel extends CI_model
   }
   function saveSymptomps($data){
     $this->db->insert('patientsymptoms',$data);
+    $id = $this->db->insert_id();
+    return $id;
   }
 }
  ?>
