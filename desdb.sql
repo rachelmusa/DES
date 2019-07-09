@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 27, 2019 at 07:35 PM
+-- Generation Time: Jul 09, 2019 at 03:16 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.0.32
 
@@ -117,6 +117,17 @@ CREATE TABLE `patientdetails` (
   `patientsid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `patientdetails`
+--
+
+INSERT INTO `patientdetails` (`id`, `height`, `weight`, `bmi`, `issuedate`, `patientsid`) VALUES
+(1, '89', '56', NULL, '2019-07-08 22:54:50', 1),
+(2, '89', '56', NULL, '2019-07-08 22:56:47', 1),
+(3, '89', '56', NULL, '2019-07-08 23:01:05', 1),
+(4, '34', '32', NULL, '2019-07-09 10:07:21', 1),
+(5, '32', '23', NULL, '2019-07-09 11:24:03', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -129,9 +140,18 @@ CREATE TABLE `patientdrug` (
   `issuedby` int(11) DEFAULT NULL,
   `drugsid` int(11) NOT NULL,
   `patientsymptomsid` int(11) NOT NULL,
-  `drugstatusid` int(11) NOT NULL,
+  `patientid` int(11) NOT NULL,
+  `point` int(11) NOT NULL,
   `issuedate` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `patientdrug`
+--
+
+INSERT INTO `patientdrug` (`id`, `doc`, `issuedby`, `drugsid`, `patientsymptomsid`, `patientid`, `point`, `issuedate`) VALUES
+(1, NULL, NULL, 3, 6, 1, 0, '2019-07-09 12:00:22'),
+(2, NULL, NULL, 2, 6, 1, 0, '2019-07-09 12:01:31');
 
 -- --------------------------------------------------------
 
@@ -146,6 +166,17 @@ CREATE TABLE `patientfiles` (
   `hosptialsid` int(11) NOT NULL,
   `issuedby` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `patientfiles`
+--
+
+INSERT INTO `patientfiles` (`id`, `issuedate`, `patientsid`, `hosptialsid`, `issuedby`) VALUES
+(1, '2019-07-08 22:54:50', 1, 1, 1),
+(2, '2019-07-08 22:56:47', 1, 1, 1),
+(3, '2019-07-08 23:01:05', 1, 1, 1),
+(4, '2019-07-09 10:07:21', 1, 1, 1),
+(5, '2019-07-09 11:24:04', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -187,6 +218,17 @@ CREATE TABLE `patientsymptoms` (
   `patientfileno` int(11) NOT NULL,
   `usersid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `patientsymptoms`
+--
+
+INSERT INTO `patientsymptoms` (`id`, `name`, `description`, `doc`, `patientfileno`, `usersid`) VALUES
+(2, 'yes it available', 'always be there for me', '2019-07-08 23:26:08', 3, 1),
+(3, 'vomiting', 'started this evening', '2019-07-09 10:07:40', 4, 1),
+(4, 'vomiting', 'started this evening', '2019-07-09 10:15:28', 4, 1),
+(5, 'vomiting two', 'yes it there', '2019-07-09 11:32:37', 5, 1),
+(6, 'yes it available', 'c', '2019-07-09 11:35:19', 5, 1);
 
 -- --------------------------------------------------------
 
@@ -258,8 +300,7 @@ ALTER TABLE `patientdetails`
 ALTER TABLE `patientdrug`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_patientdrug_drugs1_idx` (`drugsid`),
-  ADD KEY `fk_patientdrug_patientsymptoms1_idx` (`patientsymptomsid`),
-  ADD KEY `fk_patientdrug_drugstatus1_idx` (`drugstatusid`);
+  ADD KEY `fk_patientdrug_patientsymptoms1_idx` (`patientsymptomsid`);
 
 --
 -- Indexes for table `patientfiles`
@@ -323,19 +364,19 @@ ALTER TABLE `jobtype`
 -- AUTO_INCREMENT for table `patientdetails`
 --
 ALTER TABLE `patientdetails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `patientdrug`
 --
 ALTER TABLE `patientdrug`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `patientfiles`
 --
 ALTER TABLE `patientfiles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `patients`
@@ -347,7 +388,7 @@ ALTER TABLE `patients`
 -- AUTO_INCREMENT for table `patientsymptoms`
 --
 ALTER TABLE `patientsymptoms`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -364,14 +405,6 @@ ALTER TABLE `users`
 --
 ALTER TABLE `patientdetails`
   ADD CONSTRAINT `fk_patientdetails_patients1` FOREIGN KEY (`patientsid`) REFERENCES `patients` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Constraints for table `patientdrug`
---
-ALTER TABLE `patientdrug`
-  ADD CONSTRAINT `fk_patientdrug_drugs1` FOREIGN KEY (`drugsid`) REFERENCES `drugs` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_patientdrug_drugstatus1` FOREIGN KEY (`drugstatusid`) REFERENCES `drugstatus` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_patientdrug_patientsymptoms1` FOREIGN KEY (`patientsymptomsid`) REFERENCES `patientsymptoms` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `patientfiles`
