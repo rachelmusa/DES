@@ -72,6 +72,7 @@ $route['dashboard/patient/save'] = 'patients/set_patient';
 $route['dashboard/home'] = 'dashboard/home';
 $route['dashboard/login'] = 'dashboard';
 $route['dashboard/logout'] = 'users/logout';
+$route['dashboard/user/signup'] = 'dashboard/signup';
 $route['default_controller'] = 'dashboard';
 // $route['default_controller'] = 'welcome';
 $route['404_override'] = '';

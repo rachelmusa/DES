@@ -39,6 +39,7 @@ if ($this->session->userdata('checklogged') == true) {
           <div class="col-md-6 container">
             <button class="col-md-12 btn btn-primary des-btn" type="submit" name="button">LOGIN</button>
             <!-- <p>Welcome to DES</p> -->
+            <p class="sitelink"><a href="<?=base_url('index.php/dashboard/user/signup')?>" class="btn">Signup</a></p>
           </div>
         </form>
       </div>

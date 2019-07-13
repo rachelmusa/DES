@@ -12,6 +12,10 @@ class consultation extends CI_controller{
     $this->load->helper('url');
   }
   function patient_details(){
+    $userdata = $this->session->userdata('user_profile');
+    $data['account'] = $userdata['jobname'];
+    $userdata = $this->session->userdata('user_profile');
+    $data['account'] = $userdata['jobname'];
       $data['patientList'] = $this->patientModel->get_patients();
       $this->load->view('head');
       $this->load->view('con_patientdetails',$data);
@@ -37,6 +41,8 @@ class consultation extends CI_controller{
       $this->load->view('footer');
   }
   function patient_symptoms_save(){
+    $userdata = $this->session->userdata('user_profile');
+    $data['account'] = $userdata['jobname'];
     $userCurrent = $this->session->userdata('user_profile');
       $data = $this->input->post('psymptomps');
       $data['usersid'] = $userCurrent['userid'];
@@ -50,6 +56,8 @@ class consultation extends CI_controller{
       }
   }
   function assign_drugs($symtompsId,$patientId){
+    $userdata = $this->session->userdata('user_profile');
+    $data['account'] = $userdata['jobname'];
     $data['symtompsId'] = $symtompsId;
     $data['patientId'] = $patientId;
     $data['patientList'] = $this->patientModel->get_patients();

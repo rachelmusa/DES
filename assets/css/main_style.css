@@ -16,6 +16,10 @@ body{
     right: 76px;
     top: 45px;
 }
+.sitelink{
+  padding: 19px;
+  text-align: center;
+}
 .des-row-overide{
   top: 52px;
   padding: 58px;

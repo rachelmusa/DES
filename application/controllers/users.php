@@ -12,10 +12,13 @@ class Users extends CI_controller
     $this->load->model('UserModel');
   }
 
-  function set_user()
-  {
+  function set_user(){
     $userdata = $this->input->post('user');
-    $userdata['password'] = md5($userdata['lname']);
+    if($userdata['password']){
+      $userdata['password'] = md5($userdata['password']);
+    }else{
+      $userdata['password'] = md5($userdata['lname']);
+    }
     $this->UserModel->saveUser($userdata);
     redirect('dashboard/user/list');
   }
