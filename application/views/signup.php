@@ -24,7 +24,7 @@ if ($this->session->userdata('checklogged') == true) {
                           <label for=""><i class="fa fa-user"></i></label>
                         </div>
                         <div class="col-md-11">
-                          <input placeholder="First Name" class="des-input" type="text" name="user[fname]" value="">
+                          <input required placeholder="First Name" class="des-input" type="text" name="user[fname]" value="">
                         </div>
                       </div>
                     </div>
@@ -36,7 +36,7 @@ if ($this->session->userdata('checklogged') == true) {
                           <label for=""><i class="fa fa-user"></i></label>
                         </div>
                         <div class="col-md-11">
-                          <input placeholder="Middle Name" class="des-input" type="text" name="user[mname]" value="">
+                          <input required placeholder="Middle Name" class="des-input" type="text" name="user[mname]" value="">
                         </div>
                       </div>
                     </div>
@@ -48,7 +48,7 @@ if ($this->session->userdata('checklogged') == true) {
                           <label for=""><i class="fa fa-user"></i></label>
                         </div>
                         <div class="col-md-11">
-                          <input placeholder="Last Name" class="des-input" type="text" name="user[lname]" value="">
+                          <input required placeholder="Last Name" class="des-input" type="text" name="user[lname]" value="">
                         </div>
                       </div>
                     </div>
@@ -80,7 +80,7 @@ if ($this->session->userdata('checklogged') == true) {
                           <label for=""><i class="fa fa-road"></i></label>
                         </div>
                         <div class="col-md-11">
-                          <input placeholder="Address" class="des-input" type="text" name="user[address]" value="">
+                          <input required placeholder="Address" class="des-input" type="text" name="user[address]" value="">
                         </div>
                       </div>
                     </div>
@@ -92,7 +92,7 @@ if ($this->session->userdata('checklogged') == true) {
                           <label for=""><i class="fa fa-mobile"></i></label>
                         </div>
                         <div class="col-md-11">
-                          <input placeholder="Mobile" class="des-input" type="text" name="user[mobile]" value="">
+                          <input required placeholder="Mobile" class="des-input" type="text" name="user[mobile]" value="">
                         </div>
                       </div>
                     </div>
@@ -104,7 +104,7 @@ if ($this->session->userdata('checklogged') == true) {
                           <label for=""><i class="fa fa-at"></i></label>
                         </div>
                         <div class="col-md-11">
-                          <input placeholder="Email" class="des-input" type="text" name="user[email]" value="">
+                          <input required placeholder="Email" class="des-input" type="text" name="user[email]" value="">
                         </div>
                       </div>
                     </div>
@@ -135,7 +135,7 @@ if ($this->session->userdata('checklogged') == true) {
                           <label for=""><i class="fa fa-lock"></i></label>
                         </div>
                         <div class="col-md-11">
-                          <input placeholder="Password" class="des-input" type="password" name="user[password]" value="">
+                          <input required placeholder="Password" class="des-input" type="password" name="user[password]" value="">
                             <input type="hidden" value="2" name="user[jobtypeid]">
                         </div>
                       </div>

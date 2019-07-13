@@ -32,7 +32,7 @@ if ($this->session->userdata('checklogged') == true) {
                 <label for=""><i class="fa fa-lock"></i></label>
               </div>
               <div class="col-md-11">
-                <input placeholder="Password" class="des-input" type="password" name="password" value="">
+                <input required placeholder="Password" class="des-input" type="password" name="password" value="">
               </div>
             </div>
           </div>
