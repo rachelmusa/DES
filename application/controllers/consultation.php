@@ -72,14 +72,27 @@ class consultation extends CI_controller{
     $patientInfo = $this->input->post('pdetails');
     $patientInfo['patientId'] = $this->input->post('patientId');
     $check = $this->drugModel->checkDrugs($patientInfo['drugsid'],$patientInfo['patientId']);
-    if($check){
-      $this->session->set_flashdata('message', 'Change patient drug..');
-      redirect('/consultation/patient/assign_drugs/'.$patientInfo['patientsymptomsid'].'/'.$patientInfo['patientId']);
-    }else{
+    // echo '<pre>';
+    // print_r($check);
+    // die();
+    if($check == null){
+      //die();
       $this->drugModel->insertPatientDrug($patientInfo);
-      $this->session->set_flashdata('message', 'Assigned successfully');
-      redirect('/consultation/patient/assign_drugs/'.$patientInfo['patientsymptomsid'].'/'.$patientInfo['patientId']);
+        $this->session->set_flashdata('message', 'Assigned successfully');
+        redirect('/consultation/patient/assign_drugs/'.$patientInfo['patientsymptomsid'].'/'.$patientInfo['patientId']);
+    }else{
+      if($check[0]['point'] < 3){
+        $patientInfo['point'] = $check[0]['point'] + 1;
+        $this->drugModel->updatePatientDrug($patientInfo,$check[0]['id']);
+        $this->session->set_flashdata('message', 'Assigned successfully, maximum '.$check[0]['point']);
+        redirect('/consultation/patient/assign_drugs/'.$patientInfo['patientsymptomsid'].'/'.$patientInfo['patientId']);
+      }else{
+        $this->session->set_flashdata('error', 'Change patient drug.. it reach the muximum per drug '.$check[0]['point']);
+        redirect('/consultation/patient/assign_drugs/'.$patientInfo['patientsymptomsid'].'/'.$patientInfo['patientId']);
+      }
     }
+    
+    
   }
 }
 ?>

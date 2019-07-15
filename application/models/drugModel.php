@@ -20,10 +20,10 @@ class drugModel extends CI_model
   function checkDrugs($drugsid,$patientId){
     $filter = array(
       'drugsid' =>$drugsid ,
-      'patientid'=>$patientId,
-      'point <'=>3
+      'patientid'=>$patientId
+      // 'p.point <'=>3
     );
-    $this->db->select('p.point');
+    $this->db->select('p.point,p.id');
     $this->db->from('patientdrug as p');
     $this->db->where($filter);
     $result = $this->db->get();
@@ -31,6 +31,10 @@ class drugModel extends CI_model
   }
   function insertPatientDrug($data){
     $this->db->insert('patientdrug',$data);
+  }
+  function updatePatientDrug($data,$id){
+    $this->db->where('id',$id);
+    $this->db->update('patientdrug',$data);
   }
 }
  ?>

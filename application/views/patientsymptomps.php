@@ -39,7 +39,7 @@ if (!$this->session->userdata('checklogged') == true) {
                         </div>
                         <div class="col-md-11">
                             <input type="hidden" value="<?=$patientfile?>" name="psymptomps[patientfileno]">
-                            <input type="text" value="<?=$patientid?>" name="patientId">
+                            <input type="hidden" value="<?=$patientid?>" name="patientId">
                           <input placeholder="symptomps name" class="des-input" type="text" name="psymptomps[name]" value="">
                         </div>
                       </div>

@@ -25,6 +25,12 @@ if (!$this->session->userdata('checklogged') == true) {
                 echo '<p class="alert alert-success">'.$message.'</p>';
               }
               ?>
+              <?php 
+              $error = $this->session->flashdata('error');
+              if($error){
+                echo '<p class="alert alert-success">'.$error.'</p>';
+              }
+              ?>
               <!--<p class="side-link">
                <i class="fa fa-medkit"></i><a class="btn" href="<?php echo base_url('index.php/dashboard/drug/list')?>">Drug list</a>
               </p>-->
