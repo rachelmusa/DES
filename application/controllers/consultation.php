@@ -34,6 +34,8 @@ class consultation extends CI_controller{
       }
   }
   function patient_symptoms($patientFileId,$patientId){
+    $userdata = $this->session->userdata('user_profile');
+    $data['account'] = $userdata['jobname'];
       $data['patientfile'] = $patientFileId;
       $data['patientid'] = $patientId;
       $this->load->view('head');
